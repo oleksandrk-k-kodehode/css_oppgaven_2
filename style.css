@@ -1,100 +1,124 @@
 :root {
-    /* Primary */
-    --color-bright-orange: hsl(31, 77%, 52%);
-    --color-dark-cyan: hsl(184, 100%, 22%);
-    --color-very-dark-cyan: hsl(179, 100%, 13%);
+  /* Primary */
+  --color-bright-orange: hsl(31, 77%, 52%);
+  --color-dark-cyan: hsl(184, 100%, 22%);
+  --color-very-dark-cyan: hsl(179, 100%, 13%);
 
-    /* Neutral */
-    --color-transparent-white: hsla(0, 0%, 100%, 0.75);
-    --color-very-light-gray: hsl(0, 0%, 95%);
+  /* Neutral */
+  --color-transparent-white: hsla(0, 0%, 100%, 0.75);
+  --color-very-light-gray: hsl(0, 0%, 95%);
 
-    /* Typography */
-    --font-size-body: 15px;
-    --font-weight-body: 400;
-    --font-weight-heading: 700;
-}
-
-.lexend-deca-body {
-    font-family: "Lexend Deca", sans-serif;
-    font-weight: var(--font-family-body);
-    font-size: var(--font-size-body);
-}
-
-.big-shoulders-head {
-    font-family: "Big Shoulders", sans-serif;
-    font-weight: var(--font-weight-heading);
+  /* Typography */
+  --font-size-body: 15px;
+  --font-weight-body: 400;
+  --font-weight-heading: 700;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: var(--color-very-light-gray);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-very-light-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
 
 .main-container {
-    display: flex;
-    margin: 5%;
-    border-radius: 20px;
-    overflow: hidden;
-    align-content: center;
-    justify-content: center;
+  display: flex;
+  max-width: 920px;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .column {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  min-height: 500px;
 }
 
 .column-sedan {
-    background-color: var(--color-bright-orange);
-}
-
-.column-sedan a {
-    color: var(--color-bright-orange);
+  background-color: var(--color-bright-orange);
 }
 
 .column-suv {
-    background-color: var(--color-dark-cyan);
-}
-
-.column-suv a {
-    color: var(--color-dark-cyan);
+  background-color: var(--color-dark-cyan);
 }
 
 .column-luxury {
-    background-color: var(--color-very-dark-cyan);
+  background-color: var(--color-very-dark-cyan);
 }
 
-.column-luxury a {
-    color: var(--color-very-dark-cyan);
+.logo img {
+  display: block;
+  margin-bottom: 2rem;
 }
 
-section {
-    display: flex;
+.big-shoulders-head {
+  font-family: "Big Shoulders", sans-serif;
+  font-weight: var(--font-weight-heading);
+  font-size: 2.5rem;
+  color: var(--color-very-light-gray);
+  margin-bottom: 1.5rem;
+}
+
+.lexend-deca-body {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: var(--font-weight-body);
+  font-size: var(--font-size-body);
+  line-height: 1.7;
+  color: var(--color-transparent-white);
+  margin-bottom: 5rem;
+}
+
+.button {
+  display: inline-block;
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  background-color: var(--color-very-light-gray);
+  text-decoration: none;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.95rem;
+  border: 2px solid var(--color-very-light-gray);
+  transition: all 0.3s ease;
+}
+
+.column-sedan .button {
+  color: var(--color-bright-orange);
+}
+
+.column-suv .button {
+  color: var(--color-dark-cyan);
+}
+
+.column-luxury .button {
+  color: var(--color-very-dark-cyan);
+}
+
+.button:hover {
+  background-color: transparent;
+  color: var(--color-very-light-gray);
+}
+
+@media (max-width: 768px) {
+  .main-container {
     flex-direction: column;
-    align-content: start;
-    justify-content: space-between;
-    padding: 5%;
-    height: 80svh;
-    width: 30svw;
-}
+    max-width: 330px;
+  }
 
-main {
-    border-radius: 8px;
-}
+  .column {
+    min-height: auto;
+  }
 
-p {
-    color: var(--color-transparent-white);
-    margin-bottom: 20%;
-    line-height: 1.5rem;
-}
-
-button {
-    height: 6svh;
-    border: 0 solid transparent;
-    border-radius: 30px;
-    width: 9svw;
-    background-color: var(--color-very-light-gray);
-    box-shadow: 2em;
+  .lexend-deca-body {
+    margin-bottom: 2rem;
+  }
 }
